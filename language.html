@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Language | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="mine" data-title-key="meta.languageTitle">
+  <main class="page-shell language-page">
+    <section class="language-hero card card-pad">
+      <span class="section-kicker"><i class="fa-solid fa-language"></i> <span data-i18n="language.kicker">Website translation</span></span>
+      <h1 class="section-title" data-i18n="language.title">Choose your language</h1>
+      <p class="section-subtitle" data-i18n="language.subtitle">Select the language you prefer for your Copy Trader account pages.</p>
+    </section>
+
+    <section class="language-grid" aria-label="Language options" data-i18n-aria-label="language.optionsLabel">
+      <a class="language-card card card-pad active" href="#" data-language-choice="en">
+        <span class="language-icon"><i class="fa-solid fa-globe"></i></span>
+        <span class="language-content">
+          <b data-i18n="language.englishName">English</b>
+          <small data-i18n="language.englishDesc">Use the website in English.</small>
+        </span>
+        <span class="language-check"><i class="fa-solid fa-check"></i></span>
+      </a>
+
+      <a class="language-card card card-pad" href="#" data-language-choice="ar">
+        <span class="language-icon"><i class="fa-solid fa-moon"></i></span>
+        <span class="language-content">
+          <b data-i18n="language.arabicName">العربية</b>
+          <small data-i18n="language.arabicDesc">استخدم الموقع باللغة العربية.</small>
+        </span>
+        <span class="language-check"><i class="fa-solid fa-check"></i></span>
+      </a>
+
+      <a class="language-card card card-pad" href="#" data-language-choice="fr">
+        <span class="language-icon"><i class="fa-solid fa-language"></i></span>
+        <span class="language-content">
+          <b data-i18n="language.frenchName">Français</b>
+          <small data-i18n="language.frenchDesc">Use the website in French.</small>
+        </span>
+        <span class="language-check"><i class="fa-solid fa-check"></i></span>
+      </a>
+
+      <a class="language-card card card-pad" href="#" data-language-choice="de">
+        <span class="language-icon"><i class="fa-solid fa-earth-europe"></i></span>
+        <span class="language-content">
+          <b data-i18n="language.germanName">Deutsch</b>
+          <small data-i18n="language.germanDesc">Use the website in German.</small>
+        </span>
+        <span class="language-check"><i class="fa-solid fa-check"></i></span>
+      </a>
+
+      <a class="language-card card card-pad" href="#" data-language-choice="zh">
+        <span class="language-icon"><i class="fa-solid fa-earth-asia"></i></span>
+        <span class="language-content">
+          <b data-i18n="language.chineseName">中文</b>
+          <small data-i18n="language.chineseDesc">Use the website in Chinese.</small>
+        </span>
+        <span class="language-check"><i class="fa-solid fa-check"></i></span>
+      </a>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span data-i18n="nav.about">About</span></a>
+    <a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span data-i18n="nav.team">Team</span></a>
+    <a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span data-i18n="nav.copy">Copy</span></a>
+    <a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span data-i18n="nav.mine">Mine</span></a>
+  </nav>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    (function () {
+      const cards = Array.from(document.querySelectorAll("[data-language-choice]"));
+      const params = new URLSearchParams(window.location.search);
+      const returnPage = params.get("return");
+
+      function getSafeReturnPage(value) {
+        if (!value) return "";
+        const normalized = String(value).trim();
+        return /^[a-z0-9-]+\.html$/i.test(normalized) ? normalized : "";
+      }
+
+      cards.forEach(card => {
+        card.addEventListener("click", event => {
+          event.preventDefault();
+          window.CopyTraderI18n?.setLanguage(card.dataset.languageChoice);
+          const safeReturnPage = getSafeReturnPage(returnPage);
+          if (safeReturnPage) {
+            window.location.href = safeReturnPage;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

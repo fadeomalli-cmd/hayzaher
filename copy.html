@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Copy Trading | Copy Trader</title>
+<link href="assets/images/favicon-32.png" rel="icon" type="image/png"/>
+<link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body data-page="copy" data-title-key="meta.copyTitle">
+<main class="page-shell copy-page-shell">
+<header class="topbar copy-topbar">
+<a class="brand" data-i18n-aria-label="copy.brandAria" href="dashboard.html"><span class="brand-mark"><img alt="Copy Trader logo" class="brand-logo-img" src="assets/images/copy-trader-mark.png"/></span><span><span class="brand-title">Copy Trader</span><span class="brand-subtitle" data-i18n="copy.brandSubtitle">Signal execution desk</span></span></a>
+<button aria-label="Refresh copy page" class="refresh-page-btn" data-i18n-aria-label="copy.refreshTitle" data-i18n-title="copy.refreshTitle" onclick="window.location.reload();" title="Refresh copy page" type="button">
+<i class="fa-solid fa-arrows-rotate"></i>
+</button>
+</header>
+<section class="copy-desk-grid">
+<div class="card card-pad copy-market-card">
+<div class="market-head copy-desk-head">
+<div>
+<span class="pill" data-i18n-html="copy.marketPanel"><i class="fa-solid fa-chart-line"></i> Live market panel</span>
+<h1 class="section-title copy-title" data-i18n="copy.title">Copy Trading Desk</h1>
+<p class="section-subtitle" data-i18n="copy.subtitle">Select the market, copy the trading signal code, paste it below, and submit the copy order.</p>
+</div>
+<span class="live-badge" data-i18n-html="copy.live"><i class="fa-solid fa-circle"></i> Live</span>
+</div>
+<div class="copy-symbol-tabs" data-copy-symbols="">
+<button class="copy-symbol-tab active" data-base="1.0000" data-copy-symbol="USDT/BEP20" data-icon="fa-solid fa-network-wired" type="button">USDT/BEP20</button>
+<button class="copy-symbol-tab" data-base="1.0000" data-copy-symbol="USDT/TRC20" data-icon="fa-solid fa-link" type="button">USDT/TRC20</button>
+<button class="copy-symbol-tab" data-base="66813.04" data-copy-symbol="BTC/USDT" data-icon="fa-brands fa-bitcoin" type="button">BTC/USDT</button>
+<button class="copy-symbol-tab" data-base="3425.89" data-copy-symbol="ETH/USDT" data-icon="fa-brands fa-ethereum" type="button">ETH/USDT</button>
+</div>
+<div class="copy-chart-panel">
+<div class="chart-topline">
+<div class="chart-asset">
+<span class="market-icon"><i class="fa-solid fa-network-wired" data-chart-icon=""></i></span>
+<span><strong data-chart-symbol="">USDT/BEP20</strong></span>
+</div>
+<div class="chart-price-box">
+<b data-chart-price="">1.0000</b>
+<span class="market-change up" data-chart-change=""><i class="fa-solid fa-arrow-trend-up"></i>+0.58%</span>
+</div>
+</div>
+<div aria-label="Candlestick chart" class="candle-chart" data-candle-chart=""></div>
+<div class="chart-scale"><span>15m</span><span>30m</span><span>45m</span><span>60m</span></div>
+</div>
+</div>
+<aside class="copy-side-stack">
+<div class="card card-pad signal-card">
+<div class="signal-head">
+<span class="pill" data-i18n-html="copy.todaysSignal"><i class="fa-solid fa-bolt"></i> Today's signal</span>
+<span class="badge success" data-i18n-html="copy.ready"><i class="fa-solid fa-check"></i> Ready</span>
+</div>
+<div class="signal-main">
+<div>
+<p class="metric-label" data-i18n="copy.selectedMarket">Selected market</p>
+<h2 data-signal-symbol="">USDT/BEP20</h2>
+</div>
+<div class="signal-direction up" data-i18n-html="copy.buy"><i class="fa-solid fa-arrow-trend-up"></i> BUY</div>
+</div>
+<div class="signal-levels">
+<div><span data-i18n="copy.entry">Entry</span><b data-signal-entry="">1.0000</b></div>
+<div><span data-i18n="copy.tp">TP</span><b data-signal-tp="">1.0030</b></div>
+<div><span data-i18n="copy.sl">SL</span><b data-signal-sl="">0.9970</b></div>
+</div>
+<p class="section-subtitle" data-i18n="copy.reviewSignal">Review the signal levels, copy the code, and submit it to activate the trade copy.</p>
+</div>
+<section class="copy-execution-stack" data-copy-terminal="">
+<div class="card card-pad trade-terminal">
+<div>
+<h2 class="small-title" data-i18n="copy.codeTitle">Today's copy code</h2>
+<p class="section-subtitle" data-i18n="copy.codeSubtitle">Copy this trading signal code and paste it in the execution field.</p>
+</div>
+<div class="terminal-code" data-trade-code="">CPY-0000-0000</div>
+<div class="inline-actions">
+<button class="btn" data-i18n-html="copy.copyCodeButton" id="copyTradeCodeButton"><i class="fa-solid fa-copy"></i> Copy code</button>
+<span class="badge" data-i18n-html="copy.durationBadge"><i class="fa-solid fa-clock"></i> Duration: <span data-trade-duration="">--</span></span>
+</div>
+</div>
+<div class="card card-pad trade-terminal">
+<div>
+<h2 class="small-title" data-i18n="copy.executeTitle">Paste &amp; execute copy trading</h2>
+<p class="section-subtitle" data-i18n="copy.executeSubtitle">Paste the signal code to activate copy trading for the selected market.</p>
+</div>
+<div class="field"><label data-i18n="copy.pasteSignalCode">Paste signal code</label><div class="input-wrap"><i class="fa-solid fa-paste"></i><input data-i18n-placeholder="copy.placeholder.code" id="tradePasteInput" placeholder="Paste your copy trading code" type="text"/></div></div>
+<button class="btn full" data-i18n-html="copy.executeButton" id="executeTradeButton"><i class="fa-solid fa-play"></i> Execute copy trading</button>
+<p aria-live="polite" class="status-message" id="copyTradeStatus"></p>
+</div>
+</section>
+</aside>
+</section>
+</main>
+<nav aria-label="Primary navigation" class="bottom-nav" data-i18n-aria-label="nav.primaryAria">
+<a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span data-i18n="nav.about">About</span></a>
+<a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span data-i18n="nav.team">Team</span></a>
+<a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span data-i18n="nav.copy">Copy</span></a>
+<a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+<a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span data-i18n="nav.mine">Mine</span></a>
+</nav>
+<script src="assets/js/translations.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

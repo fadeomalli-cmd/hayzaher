@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="mine" data-title-key="meta.recordsTitle">
+  <main class="page-shell records-page">
+    <header class="topbar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark"><img src="assets/images/copy-trader-mark.png" alt="Copy Trader logo" class="brand-logo-img"></span><span><span class="brand-title">Copy Trader</span><span class="brand-subtitle" data-i18n="records.brandSubtitle">Account activity</span></span></a>
+      <span class="pill"><i class="fa-solid fa-clock-rotate-left"></i> <span data-i18n="records.navPill">History</span></span>
+    </header>
+
+    <section class="card records-filter-card">
+      <div class="record-filter-row">
+        <label class="field">
+          <span data-i18n="records.fromDate">From date</span>
+          <span class="input-wrap"><i class="fa-solid fa-calendar-days"></i><input type="text" id="recordFromDate" class="js-date-picker" lang="en" dir="ltr" inputmode="numeric" placeholder="YYYY-MM-DD" autocomplete="off"></span>
+        </label>
+        <label class="field">
+          <span data-i18n="records.toDate">To date</span>
+          <span class="input-wrap"><i class="fa-solid fa-calendar-check"></i><input type="text" id="recordToDate" class="js-date-picker" lang="en" dir="ltr" inputmode="numeric" placeholder="YYYY-MM-DD" autocomplete="off"></span>
+        </label>
+        <button class="btn ghost" type="button" id="clearRecordFilter"><i class="fa-solid fa-rotate-left"></i> <span data-i18n="records.clear">Clear</span></button>
+      </div>
+    </section>
+
+    <section class="records-list" id="recordsList" aria-live="polite"></section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span data-i18n="nav.about">About</span></a>
+    <a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span data-i18n="nav.team">Team</span></a>
+    <a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span data-i18n="nav.copy">Copy</span></a>
+    <a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span data-i18n="nav.mine">Mine</span></a>
+  </nav>
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

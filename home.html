@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Copy Trader | Your journey to smarter copy trading starts now</title>
+  <meta name="description" content="Copy Trader: a smart daily copy trading interface with cumulative profit tracking, daily withdrawals, and a clear minimum deposit of $10.">
+  <meta name="theme-color" content="#07111f">
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .home-public-topbar.home-pro-topbar{overflow:visible;}
+    .home-public-nav.home-anchor-nav{overflow:visible;}
+    .home-language-switcher{position:relative;top:auto;right:auto;left:auto;z-index:60;margin:0;display:flex;align-items:center;}
+    html[dir="rtl"] .home-language-switcher{right:auto;left:auto;}
+    .home-language-switcher .auth-language-toggle{min-height:40px;height:auto;min-width:86px;border-radius:999px;padding:9px 12px;background:rgba(240,185,11,.10);border:1px solid rgba(240,185,11,.28);box-shadow:none;font-weight:900;}
+    .home-language-switcher .auth-language-menu{z-index:200;right:0;left:auto;}
+    html[dir="rtl"] .home-language-switcher .auth-language-menu{left:0;right:auto;}
+    @media (max-width:680px){
+      .home-public-nav.home-anchor-nav .home-language-switcher{width:100%;}
+      .home-public-nav.home-anchor-nav .home-language-switcher .auth-language-toggle{width:100%;min-height:40px;border-radius:13px;padding:7px 5px;background:rgba(255,255,255,.045);border:1px solid rgba(240,185,11,.38);}
+      .home-public-nav.home-anchor-nav .home-language-switcher .auth-language-menu{right:0;left:auto;min-width:145px;}
+      html[dir="rtl"] .home-public-nav.home-anchor-nav .home-language-switcher .auth-language-menu{right:auto;left:0;}
+    }
+  </style>
+</head>
+<body class="home-public-body" data-page="home">
+  <main class="page-shell home-public-shell">
+    <header class="home-public-topbar home-pro-topbar public-site-header">
+      <a class="brand home-public-brand" href="home.html" aria-label="Copy Trader home">
+        <span class="brand-mark"><img src="assets/images/copy-trader-mark.png" alt="Copy Trader logo" class="brand-logo-img"></span>
+        <span><span class="brand-title">Copy Trader</span><span class="brand-subtitle" data-home-i18n="brandSubtitle">Smart Copy Trading</span></span>
+      </a>
+
+      <nav class="home-public-nav home-anchor-nav" aria-label="Home page sections">
+        <a href="#home-start" data-home-i18n="navStart">Start</a>
+        <a href="#home-features" data-home-i18n="navFeatures">Features</a>
+        <a href="#home-how" data-home-i18n="navHow">How it works</a>
+        <a href="#home-withdraw" data-home-i18n="navWithdraw">Withdraw</a>
+        <a href="#home-partners" data-home-i18n="navPartners">Partners</a>
+        <div class="auth-language-switcher home-language-switcher" data-home-language-switcher>
+          <button class="auth-language-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-language-toggle aria-label="Change language">
+            <i class="fa-solid fa-language"></i>
+            <span class="auth-language-current" data-language-current>EN</span>
+            <i class="fa-solid fa-chevron-down auth-language-caret"></i>
+          </button>
+          <div class="auth-language-menu" hidden data-language-menu>
+            <button class="auth-language-option" type="button" data-set-language="en">English</button>
+            <button class="auth-language-option" type="button" data-set-language="ar">العربية</button>
+            <button class="auth-language-option" type="button" data-set-language="fr">Français</button>
+            <button class="auth-language-option" type="button" data-set-language="de">Deutsch</button>
+            <button class="auth-language-option" type="button" data-set-language="zh">中文</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-public-auth">
+        <a class="home-login-link" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> <span data-home-i18n="login">Login</span></a>
+        <a class="btn home-register-btn" href="register.html"><i class="fa-solid fa-user-plus"></i> <span data-home-i18n="register">Register</span></a>
+      </div>
+    </header>
+
+    <section class="home-public-hero home-pro-hero" id="home-start">
+      <div class="home-hero-copy card card-pad">
+        <span class="section-kicker home-kicker"><i class="fa-solid fa-bolt"></i> <span data-home-i18n="heroKicker">A smarter way to copy daily trades</span></span>
+        <h1 class="home-main-title" data-home-i18n="heroTitle">Your journey to smarter trading starts now. Do not wait.</h1>
+        <p class="home-main-lead" data-home-i18n-html="heroLead">With <strong>Copy Trader</strong>, you do not need to watch the market all day or handle complicated steps. Create your account, activate your wallet, copy the daily trading code, then track your cumulative profit and request a withdrawal when your balance is available.</p>
+
+        <div class="home-hero-actions">
+          <a class="btn home-hero-primary" href="register.html"><i class="fa-solid fa-rocket"></i> <span data-home-i18n="startNow">Start now</span></a>
+          <a class="btn ghost home-hero-secondary" href="login.html"><i class="fa-solid fa-user-check"></i> <span data-home-i18n="haveAccount">I already have an account</span></a>
+        </div>
+
+        <div class="home-trust-row" aria-label="نقاط قوة Copy Trader">
+          <span><i class="fa-solid fa-circle-check"></i> <span data-home-i18n="trustDeposit">Minimum deposit $10</span></span>
+          <span><i class="fa-solid fa-money-bill-transfer"></i> <span data-home-i18n="trustWithdraw">Daily and instant withdrawals</span></span>
+          <span><i class="fa-solid fa-chart-line"></i> <span data-home-i18n="trustProfit">Cumulative profit based on account activity</span></span>
+        </div>
+      </div>
+
+      <aside class="home-hero-visual card home-pro-visual" aria-label="مميزات Copy Trader">
+        <div class="home-orb home-orb-one"></div>
+        <div class="home-orb home-orb-two"></div>
+        <div class="home-visual-logo">
+          <img src="assets/images/copy-trader-logo.png" alt="Copy Trader logo">
+        </div>
+
+        <div class="home-profit-card home-profit-card-main">
+          <span data-home-i18n="visualTitle">Copy the trade. Track the result. Withdraw your profit.</span>
+          <strong><i class="fa-solid fa-copy"></i></strong>
+          <small data-home-i18n="visualText">A daily copy trading system that helps you benefit from trading opportunities with less effort and no complexity.</small>
+        </div>
+
+        <div class="home-profit-grid">
+          <div><i class="fa-solid fa-bolt"></i><b data-home-i18n="instant">Instant</b><span data-home-i18n="instantText">Request withdrawals anytime</span></div>
+          <div><i class="fa-solid fa-calendar-check"></i><b data-home-i18n="daily">Daily</b><span data-home-i18n="dailyText">Track profit and withdrawals</span></div>
+          <div><i class="fa-solid fa-copy"></i><b data-home-i18n="smart">Smart</b><span data-home-i18n="smartText">Copy the daily trading code</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="home-public-section home-stats-section" id="home-features">
+      <article class="card home-stat-card">
+        <i class="fa-solid fa-wallet"></i>
+        <b data-home-i18n="cardDepositTitle">Minimum deposit $10</b>
+        <span data-home-i18n="cardDepositText">Activate your wallet with a simple clear amount, then follow your account step by step.</span>
+      </article>
+      <article class="card home-stat-card featured">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <b data-home-i18n="cardWithdrawTitle">Daily and instant withdrawals</b>
+        <span data-home-i18n="cardWithdrawText">When your balance is available, you can request your profit quickly and clearly.</span>
+      </article>
+      <article class="card home-stat-card">
+        <i class="fa-solid fa-arrow-trend-up"></i>
+        <b data-home-i18n="cardProfitTitle">Cumulative profit</b>
+        <span data-home-i18n="cardProfitText">Profits are added to your balance and grow with account activity instead of staying as separate numbers.</span>
+      </article>
+    </section>
+
+    <section class="home-public-section home-smart-section card card-pad" id="home-how">
+      <div class="home-section-head">
+        <span class="section-kicker"><i class="fa-solid fa-layer-group"></i> <span data-home-i18n="smartKicker">A system designed to make the process clear</span></span>
+        <h2 class="section-title" data-home-i18n="smartTitle">Copy prepared trades instead of spending your time watching the market alone.</h2>
+        <p class="section-subtitle" data-home-i18n="smartSubtitle">The idea is simple: we prepare the daily trading code, you copy it inside your account, and you follow the result from a clear dashboard. This helps you benefit from market movement without tiring analysis or staying in front of the screen all day.</p>
+      </div>
+      <div class="home-benefit-list">
+        <div><i class="fa-solid fa-user-shield"></i><strong data-home-i18n="benefit1Title">Clear organized start</strong><span data-home-i18n="benefit1Text">Every step is arranged clearly so you know what to do before and after deposit.</span></div>
+        <div><i class="fa-solid fa-key"></i><strong data-home-i18n="benefit2Title">Daily trading code</strong><span data-home-i18n="benefit2Text">A ready code that helps you copy the daily trade quickly and clearly.</span></div>
+        <div><i class="fa-solid fa-hand-holding-dollar"></i><strong data-home-i18n="benefit3Title">Profit with less effort</strong><span data-home-i18n="benefit3Text">Instead of long research and analysis, copy the trade and follow your account growth.</span></div>
+        <div><i class="fa-solid fa-gauge-high"></i><strong data-home-i18n="benefit4Title">Smart tracking dashboard</strong><span data-home-i18n="benefit4Text">Your balance, cumulative profit, and withdrawal requests are clearly in front of you.</span></div>
+      </div>
+    </section>
+
+    <section class="home-public-section home-steps-section">
+      <div class="home-section-head center">
+        <span class="section-kicker"><i class="fa-solid fa-route"></i> <span data-home-i18n="stepsKicker">How it works</span></span>
+        <h2 class="section-title" data-home-i18n="stepsTitle">Three clear steps: account, copy trade, track profit.</h2>
+      </div>
+      <div class="home-steps-grid">
+        <article class="card home-step-card">
+          <span>01</span><i class="fa-solid fa-user-plus"></i>
+          <h3 data-home-i18n="step1Title">Create your account</h3>
+          <p data-home-i18n="step1Text">Click register and create your account in moments without complicated steps.</p>
+        </article>
+        <article class="card home-step-card">
+          <span>02</span><i class="fa-solid fa-sack-dollar"></i>
+          <h3 data-home-i18n="step2Title">Activate your wallet</h3>
+          <p data-home-i18n="step2Text">Activate your wallet with a minimum deposit of only $10, then move to copy trading.</p>
+        </article>
+        <article class="card home-step-card">
+          <span>03</span><i class="fa-solid fa-money-bill-transfer"></i>
+          <h3 data-home-i18n="step3Title">Track and withdraw</h3>
+          <p data-home-i18n="step3Text">Track cumulative profit growth and request a withdrawal when the withdrawable balance is available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-public-section home-withdraw-section card card-pad" id="home-withdraw">
+      <div class="home-section-head">
+        <span class="section-kicker"><i class="fa-solid fa-hand-holding-dollar"></i> <span data-home-i18n="withdrawKicker">Withdrawals matter most to users</span></span>
+        <h2 class="section-title" data-home-i18n="withdrawTitle">Clear cumulative profits and easy daily withdrawals.</h2>
+        <p class="section-subtitle" data-home-i18n="withdrawSubtitle">With Copy Trader, your profits stay visible moment by moment through a simple organized dashboard. When a withdrawable balance is available, you can send a withdrawal request directly and it will be handled clearly according to the platform system.</p>
+      </div>
+      <div class="home-withdraw-grid">
+        <div><i class="fa-solid fa-clock"></i><b data-home-i18n="anytime">Anytime</b><span data-home-i18n="anytimeText">Withdrawal requests are available when the balance becomes withdrawable.</span></div>
+        <div><i class="fa-solid fa-calendar-day"></i><b data-home-i18n="daily2">Daily</b><span data-home-i18n="daily2Text">A suitable system for users who want to follow profits daily and regularly.</span></div>
+        <div><i class="fa-solid fa-shield-heart"></i><b data-home-i18n="clear">Clear</b><span data-home-i18n="clearText">The request status appears inside your account so you know where the process reached.</span></div>
+      </div>
+    </section>
+
+    <section class="home-public-section home-partners-preview card card-pad" id="home-partners">
+      <div class="home-section-head">
+        <span class="section-kicker"><i class="fa-solid fa-handshake"></i> <span data-home-i18n="partnersKicker">Our partners</span></span>
+        <h2 class="section-title" data-home-i18n="partnersTitle">We partner with globally recognized trading names and tools.</h2>
+        <p class="section-subtitle" data-home-i18n="partnersSubtitle">We work with recognized names and tools in trading and copy trading so the Copy Trader experience feels more professional, trusted, and clear for users.</p>
+      </div>
+      <div class="home-partner-strip">
+        <div><img src="assets/images/partners/etoro.png" alt="eToro"><span>eToro</span></div>
+        <div><img src="assets/images/partners/zulutrade.png" alt="ZuluTrade"><span>ZuluTrade</span></div>
+        <div><img src="assets/images/partners/naga-trader.png" alt="NAGA Trader"><span>NAGA</span></div>
+        <div><img src="assets/images/partners/duplitrade.png" alt="DupliTrade"><span>DupliTrade</span></div>
+        <div><img src="assets/images/partners/metatrader-signals.png" alt="MetaTrader Signals"><span>MetaTrader</span></div>
+      </div>
+    </section>
+
+    <section class="home-final-banner">
+      <div>
+        <span class="section-kicker"><i class="fa-solid fa-fire"></i> <span data-home-i18n="finalKicker">The decision starts now</span></span>
+        <h2 data-home-i18n="finalTitle">Do not wait for a far opportunity. Start with one simple step that may change how you deal with money.</h2>
+        <p data-home-i18n="finalText">Register now, activate your account, copy the daily trading code, and follow your cumulative profits with daily and instant withdrawal when the balance is available.</p>
+      </div>
+      <div class="home-final-actions">
+        <a class="btn" href="register.html"><i class="fa-solid fa-user-plus"></i> <span data-home-i18n="createAccount">Create new account</span></a>
+        <a class="btn ghost" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> <span data-home-i18n="login">Login</span></a>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'ct_copytrader_language';
+      const labels = { en: 'EN', ar: 'AR', fr: 'FR', de: 'DE', zh: '中文' };
+      const dict = {
+        en: {},
+        ar: {
+          brandSubtitle:'نسخ تداول ذكي', navStart:'البداية', navFeatures:'المميزات', navHow:'طريقة العمل', navWithdraw:'السحب', navPartners:'شركاؤنا', login:'تسجيل دخول', register:'تسجيل', heroKicker:'طريقة أذكى لنسخ التداول اليومي', heroTitle:'رحلتك نحو تداول أذكى تبدأ الآن. لا تنتظر.', heroLead:'مع <strong>Copy Trader</strong> لا تحتاج أن تراقب السوق طوال اليوم أو تدخل في تفاصيل معقدة. أنشئ حسابك، فعّل محفظتك، انسخ كود التداول اليومي، ثم تابع أرباحك التراكمية واطلب السحب عندما يصبح رصيدك متاحًا.', startNow:'ابدأ الآن', haveAccount:'لدي حساب بالفعل', trustDeposit:'الحد الأدنى للإيداع 10$', trustWithdraw:'سحب يومي وفوري', trustProfit:'ربح تراكمي حسب نشاط الحساب', visualTitle:'انسخ الصفقة. تابع النتيجة. اسحب أرباحك.', visualText:'نظام نسخ صفقات يومي يساعدك على الاستفادة من فرص التداول بأقل جهد وبدون تعقيد.', instant:'فوري', instantText:'طلب السحب بأي وقت', daily:'يومي', dailyText:'متابعة الأرباح والسحب', smart:'ذكي', smartText:'نسخ كود التداول اليومي', cardDepositTitle:'الحد الأدنى للإيداع 10$', cardDepositText:'فعّل محفظتك بمبلغ بسيط وواضح، ثم تابع حركة حسابك خطوة بخطوة.', cardWithdrawTitle:'سحب يومي وفوري', cardWithdrawText:'عندما يصبح الرصيد قابلًا للسحب، يمكنك طلب أرباحك بسرعة ووضوح.', cardProfitTitle:'ربح تراكمي', cardProfitText:'الأرباح تُضاف على رصيدك وتتراكم مع نشاط الحساب بدل أن تبقى أرقامًا منفصلة.', smartKicker:'نظام مصمم ليجعل العملية واضحة', smartTitle:'انسخ صفقات جاهزة بدل أن تضيع وقتك في متابعة السوق وحدك.', smartSubtitle:'الفكرة بسيطة: نحن نجهّز لك كود التداول اليومي، وأنت تنسخه داخل حسابك وتتابع النتيجة من لوحة واضحة. هكذا تستفيد من حركة السوق بدون تحليل متعب وبدون أن تبقى أمام الشاشة طوال اليوم.', benefit1Title:'بداية واضحة ومنظمة', benefit1Text:'كل خطوة مرتبة بوضوح حتى تعرف ماذا تفعل قبل الإيداع وبعده.', benefit2Title:'كود تداول يومي', benefit2Text:'كود جاهز يساعدك على نسخ الصفقة اليومية بسرعة ووضوح.', benefit3Title:'ربح بأقل جهد', benefit3Text:'بدل البحث والتحليل الطويل، انسخ الصفقة وتابع نمو حسابك.', benefit4Title:'لوحة متابعة ذكية', benefit4Text:'رصيدك، أرباحك التراكمية، وطلبات السحب أمامك بوضوح.', stepsKicker:'طريقة العمل', stepsTitle:'ثلاث خطوات واضحة: حساب، نسخ صفقة، متابعة ربح.', step1Title:'سجّل حسابك', step1Text:'اضغط تسجيل وأنشئ حسابك خلال لحظات بدون خطوات معقدة.', step2Title:'فعّل محفظتك', step2Text:'فعّل محفظتك بالحد الأدنى للإيداع 10$ فقط، ثم انتقل لنسخ التداول.', step3Title:'تابع واسحب', step3Text:'تابع نمو الربح التراكمي، واطلب السحب عند توفر الرصيد القابل للسحب.', withdrawKicker:'السحب أهم نقطة للمستخدم', withdrawTitle:'أرباح تراكمية واضحة وسحب يومي متاح بسهولة.', withdrawSubtitle:'مع Copy Trader تبقى أرباحك أمامك لحظة بلحظة من خلال لوحة بسيطة ومنظمة. وعند توفر رصيد قابل للسحب، يمكنك إرسال طلب السحب مباشرة ليتم التعامل معه بسرعة ووضوح وفق نظام المنصة.', anytime:'أي وقت', anytimeText:'طلب السحب متاح عندما يصبح الرصيد قابلًا للسحب.', daily2:'يوميًا', daily2Text:'نظام مناسب لمن يريد متابعة أرباحه بشكل يومي ومنتظم.', clear:'بوضوح', clearText:'حالة الطلب تظهر داخل حسابك حتى تعرف أين وصلت العملية.', partnersKicker:'شركاؤنا', partnersTitle:'نحن شركاء مع أسماء وأدوات تداول معروفة عالميًا.', partnersSubtitle:'نعمل مع أسماء وأدوات معروفة في عالم التداول ونسخ الصفقات، حتى تكون تجربة Copy Trader أكثر احترافية وثقة ووضوحًا للمستخدم.', finalKicker:'القرار يبدأ الآن', finalTitle:'لا تنتظر فرصة بعيدة. ابدأ بخطوة بسيطة قد تغيّر طريقة تعاملك مع المال.', finalText:'سجّل الآن، فعّل حسابك، انسخ كود التداول اليومي، وتابع أرباحك التراكمية مع إمكانية السحب اليومي والفوري عند توفر الرصيد.', createAccount:'إنشاء حساب جديد'
+        },
+        fr: { navStart:'Début', navFeatures:'Fonctionnalités', navHow:'Fonctionnement', navWithdraw:'Retrait', navPartners:'Partenaires', login:'Connexion', register:'Inscription', heroKicker:'Une façon plus intelligente de copier les trades quotidiens', heroTitle:'Votre parcours vers un trading plus intelligent commence maintenant.', startNow:'Commencer', haveAccount:'J’ai déjà un compte', createAccount:'Créer un compte' },
+        de: { navStart:'Start', navFeatures:'Funktionen', navHow:'So funktioniert es', navWithdraw:'Auszahlung', navPartners:'Partner', login:'Einloggen', register:'Registrieren', heroKicker:'Eine intelligentere Art, tägliche Trades zu kopieren', heroTitle:'Ihr Weg zu smarterem Trading beginnt jetzt.', startNow:'Jetzt starten', haveAccount:'Ich habe bereits ein Konto', createAccount:'Neues Konto erstellen' },
+        zh: { navStart:'开始', navFeatures:'功能', navHow:'运作方式', navWithdraw:'提现', navPartners:'合作伙伴', login:'登录', register:'注册', heroKicker:'更智能地复制每日交易', heroTitle:'更智能交易之旅现在开始。', startNow:'立即开始', haveAccount:'我已有账户', createAccount:'创建新账户' }
+      };
+      function getLang(){ return (localStorage.getItem(STORAGE_KEY) || 'en').toLowerCase(); }
+      function setLang(lang){
+        lang = ['en','ar','fr','de','zh'].includes(lang) ? lang : 'en';
+        if (window.CopyTraderI18n) window.CopyTraderI18n.setLanguage(lang);
+        else localStorage.setItem(STORAGE_KEY, lang);
+        render();
+      }
+      function render(){
+        const lang = getLang();
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.querySelectorAll('[data-home-i18n]').forEach(el => {
+          const key = el.dataset.homeI18n;
+          if (!el.dataset.homeDefault) el.dataset.homeDefault = el.textContent;
+          el.textContent = (dict[lang] && dict[lang][key]) || el.dataset.homeDefault;
+        });
+        document.querySelectorAll('[data-home-i18n-html]').forEach(el => {
+          const key = el.dataset.homeI18nHtml;
+          if (!el.dataset.homeDefaultHtml) el.dataset.homeDefaultHtml = el.innerHTML;
+          el.innerHTML = (dict[lang] && dict[lang][key]) || el.dataset.homeDefaultHtml;
+        });
+        document.querySelectorAll('[data-language-current]').forEach(el => el.textContent = labels[lang] || 'EN');
+        document.querySelectorAll('[data-set-language]').forEach(btn => btn.classList.toggle('active', btn.dataset.setLanguage === lang));
+        document.title = lang === 'ar' ? 'Copy Trader | رحلتك نحو تداول أذكى تبدأ الآن' : 'Copy Trader | Your journey to smarter copy trading starts now';
+      }
+      function setupSwitcher(){
+        const switcher = document.querySelector('[data-home-language-switcher]');
+        if (!switcher) return;
+        const toggle = switcher.querySelector('[data-language-toggle]');
+        const menu = switcher.querySelector('[data-language-menu]');
+        toggle.addEventListener('click', function(e){ e.stopPropagation(); menu.hidden = !menu.hidden; toggle.setAttribute('aria-expanded', menu.hidden ? 'false' : 'true'); switcher.classList.toggle('open', !menu.hidden); });
+        switcher.querySelectorAll('[data-set-language]').forEach(btn => btn.addEventListener('click', function(){ setLang(btn.dataset.setLanguage); menu.hidden = true; switcher.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }));
+        document.addEventListener('click', function(e){ if(!switcher.contains(e.target)){ menu.hidden = true; switcher.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }});
+      }
+      document.addEventListener('DOMContentLoaded', function(){ setupSwitcher(); render(); });
+      window.addEventListener('copytrader:languagechange', render);
+    })();
+  </script>
+
+</body>
+</html>

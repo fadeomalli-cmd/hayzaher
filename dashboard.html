@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="dashboard" data-title-key="meta.dashboardTitle">
+  <main class="page-shell">
+    <header class="topbar dashboard-topbar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark"><img src="assets/images/copy-trader-mark.png" alt="Copy Trader logo" class="brand-logo-img"></span><span><span class="brand-title">Copy Trader</span><span class="brand-subtitle"><span data-i18n="brand.accountId">Account ID:</span> <span data-account-id></span></span></span></a>
+      <button class="refresh-page-btn" type="button" aria-label="Refresh dashboard" title="Refresh dashboard" data-i18n-aria-label="actions.refreshDashboard" data-i18n-title="actions.refreshDashboard" onclick="window.location.reload();">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </button>
+    </header>
+
+
+    <section class="grid-3" style="margin-bottom:20px;">
+      <div class="card metric-card balance-toggle-card" role="button" tabindex="0" aria-label="Hide or show total balance" data-privacy-toggle><div><span class="metric-label"><i class="fa-solid fa-wallet"></i> <span data-i18n="dashboard.totalBalance">Total balance</span></span><div class="metric-value" data-balance data-private-value data-real-value="$0.00">$0.00</div></div></div>
+      <div class="card metric-card balance-toggle-card" role="button" tabindex="0" aria-label="Hide or show daily profit" data-privacy-toggle><div><span class="metric-label"><i class="fa-solid fa-arrow-trend-up"></i> <span data-i18n="dashboard.dailyProfit">Daily profit</span></span><div class="metric-value" data-profit data-private-value>$0.00</div></div><p class="metric-note" data-i18n="dashboard.dailyProfitNote">Today’s profit grows with every copied trade.</p></div>
+      <div class="card metric-card volume-card balance-toggle-card" role="button" tabindex="0" aria-label="Hide or show trading volume" data-privacy-toggle><div><span class="metric-label"><i class="fa-solid fa-chart-simple"></i> <span data-i18n="dashboard.tradingVolume">Trading volume</span></span><div class="metric-value"><span data-volume data-private-value>$0.00</span> <small data-volume-percent data-private-value>0%</small></div></div><p class="metric-note" data-i18n="dashboard.volumeNote">Fill the bar to unlock 0-fee profit withdrawals.</p><div class="progress" data-volume-progress><span></span></div></div>
+    </section>
+
+    <section>
+      <div class="card card-pad market-snapshot-card">
+        <div class="market-head">
+          <div>
+            <h2 class="small-title" data-i18n="dashboard.marketTitle">Live Market Snapshot</h2>
+            <p class="section-subtitle" data-i18n="dashboard.marketSubtitle">Professional market overview with clean live-style pricing and account performance insights.</p>
+          </div>
+          <span class="live-badge"><i class="fa-solid fa-signal"></i> <span data-i18n="dashboard.live">Live</span></span>
+        </div>
+        <div class="market-list" data-market-list></div>
+      </div>
+    </section>
+  </main>
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span data-i18n="nav.about">About</span></a>
+    <a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span data-i18n="nav.team">Team</span></a>
+    <a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span data-i18n="nav.copy">Copy</span></a>
+    <a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span data-i18n="nav.mine">Mine</span></a>
+  </nav>
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

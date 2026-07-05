@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="team" data-title-key="meta.teamTitle">
+  <main class="page-shell">
+    <section class="card card-pad" style="margin-bottom:20px;">
+      <span class="pill"><i class="fa-solid fa-link"></i> <span data-i18n="team.kicker">Personal invitation</span></span>
+      <h1 class="section-title" style="margin-top:18px;" data-i18n="team.title">Grow your team and unlock rewards with every active member.</h1>
+      <p class="section-subtitle" data-i18n="team.subtitle">Invite new members and earn a 13% reward on every deposit made by each member you bring.</p>
+      <div class="copy-field">
+        <div class="input-wrap"><i class="fa-solid fa-link"></i><input id="inviteLink" data-invite-input readonly></div>
+        <button class="btn" data-copy-target="#inviteLink"><i class="fa-solid fa-copy"></i> <span data-i18n="team.copyInviteLink">Copy invite link</span></button>
+      </div>
+    </section>
+
+    <section class="grid-3" style="margin-bottom:20px;">
+      <div class="card metric-card"><span class="metric-label"><i class="fa-solid fa-users"></i> <span data-i18n="team.firstGeneration">First generation</span></span><div class="metric-value" data-team-count>0</div><p class="metric-note" data-i18n="team.firstGenerationNote">Members who joined directly through your invite link.</p></div>
+      <div class="card metric-card"><span class="metric-label"><i class="fa-solid fa-circle-check"></i> <span data-i18n="team.fundedUsers">Funded users</span></span><div class="metric-value" data-funded-count>0</div><p class="metric-note" data-i18n="team.fundedUsersNote">Invited members with active deposits in their account.</p></div>
+      <div class="card metric-card"><span class="metric-label"><i class="fa-solid fa-gift"></i> <span data-i18n="team.bonusReceived">Bonus received</span></span><div class="metric-value">13%</div><p class="metric-note" data-i18n="team.bonusReceivedNote">Reward rate earned from each invited member deposit.</p></div>
+    </section>
+
+    <section class="card card-pad">
+      <h2 class="small-title" data-i18n="team.membersTitle">First-generation members</h2>
+      <p class="section-subtitle" data-i18n="team.membersSubtitle">Member activity overview with deposit amount and reward value.</p>
+      <div class="table-wrap" style="margin-top:14px;">
+        <table>
+          <thead><tr><th data-i18n="team.table.member">Member ID</th><th data-i18n="team.table.joined">Joined</th><th data-i18n="team.table.status">Status</th><th data-i18n="team.table.depositAmount">Deposit amount</th><th data-i18n="team.table.bonus">Bonus</th></tr></thead>
+          <tbody data-team-members>
+            <tr><td colspan="5" class="muted" data-i18n="team.noMembers">No registered members yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span data-i18n="nav.about">About</span></a>
+    <a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span data-i18n="nav.team">Team</span></a>
+    <a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span data-i18n="nav.copy">Copy</span></a>
+    <a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span data-i18n="nav.mine">Mine</span></a>
+  </nav>
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

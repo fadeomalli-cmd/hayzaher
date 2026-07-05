@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mine | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="mine">
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark"><img src="assets/images/copy-trader-mark.png" alt="Copy Trader logo" class="brand-logo-img"></span><span><span class="brand-title">Copy Trader</span><span class="brand-subtitle">Member center</span></span></a>
+      <span class="pill"><i class="fa-solid fa-user-gear"></i> Mine</span>
+    </header>
+
+    <section class="drawer-layout">
+      <aside class="card card-pad side-drawer">
+        <div class="profile-card">
+          <div class="avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <h1 class="small-title">Member menu</h1>
+            <p class="section-subtitle">Account ID: <b data-account-id></b><br>Contact: <span data-account-contact></span></p>
+          </div>
+          <nav class="drawer-links" aria-label="Account actions">
+            <a class="drawer-link" href="deposit.html"><i class="fa-solid fa-wallet"></i> Deposit</a>
+            <a class="drawer-link" href="transfer.html"><i class="fa-solid fa-money-bill-transfer"></i> Withdraw</a>
+            <a class="drawer-link" href="records.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+            <a class="drawer-link" href="language.html"><i class="fa-solid fa-language"></i> Language</a>
+            <a class="drawer-link" href="partners.html"><i class="fa-solid fa-handshake"></i> Our Partners</a>
+            <a class="drawer-link" href="how-we-work.html"><i class="fa-solid fa-diagram-project"></i> How We Work</a>
+            <a class="drawer-link" href="app.html"><i class="fa-solid fa-download"></i> Download App</a>
+            <a class="drawer-link" href="https://web.telegram.org/a/#777000"><i class="fa-solid fa-headset"></i> Contact Us</a>
+            <a class="drawer-link danger" href="login.html" data-logout><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+          </nav>
+        </div>
+      </aside>
+
+      <section class="card card-pad">
+        <span class="pill"><i class="fa-solid fa-id-card"></i> Profile overview</span>
+        <h2 class="section-title" style="margin-top:18px;">Manage deposits, withdrawals, app access, and support.</h2>
+        <p class="section-subtitle">This side menu is designed to stay visible on desktop and stack naturally on mobile screens.</p>
+        <div class="grid-3" style="margin-top:22px;">
+          <div class="rule-card"><b>Total balance</b><span class="muted" data-balance>$0.00</span></div>
+          <div class="rule-card"><b>Copy profit</b><span class="muted" data-profit>$0.00</span></div>
+          <div class="rule-card"><b>Referral bonus</b><span class="muted" data-referral-bonus>$0.00</span></div>
+        </div>
+        <ul class="notice-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Account activation requires a deposit of 10 USDT or more.</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Keep growing your account and unlock profit withdrawals with 0 fees when the target is reached.</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>One withdrawal request is allowed per trading day.</span></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span>About</span></a>
+    <a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span>Team</span></a>
+    <a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span>Copy</span></a>
+    <a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+    <a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span>Mine</span></a>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

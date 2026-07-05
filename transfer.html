@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Withdraw | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="withdraw-body" data-page="mine" data-title-key="meta.withdrawTitle">
+  <main class="page-shell withdraw-reference-shell">
+    <section class="withdraw-ref-layout">
+      <div class="withdraw-ref-card withdraw-request-card">
+        <div class="withdraw-card-title-row">
+          <div>
+            <h2 data-i18n="withdraw.title">Withdrawal Request</h2>
+            <p data-i18n="withdraw.subtitle">Save a BEP20 wallet and submit one withdrawal request per Lebanon trading day.</p>
+          </div>
+          <a class="withdraw-history-chip" href="transfer3.html"><i class="fa-solid fa-clock-rotate-left"></i> <span data-i18n="withdraw.history">History</span></a>
+        </div>
+
+        <form class="withdraw-form-panel" id="withdrawForm">
+          <div class="withdraw-input-block" id="walletPanel">
+            <label for="withdrawAddressDisplay" data-i18n="withdraw.walletAddressLabel">USDT BEP20 Wallet Address</label>
+            <div class="withdraw-wallet-row">
+              <div class="withdraw-wallet-input-wrap">
+                <i class="fa-solid fa-link"></i>
+                <input id="withdrawAddressDisplay" type="text" placeholder="No wallet address saved" data-i18n-placeholder="withdraw.noWalletPlaceholder" autocomplete="off" readonly>
+              </div>
+              <button class="withdraw-wallet-action" id="openWalletModal" type="button"><i class="fa-solid fa-plus-circle"></i> <span data-i18n="withdraw.addEdit">Add / Edit</span></button>
+            </div>
+            <small id="withdrawWalletStatus" data-i18n="withdraw.walletStatusInitial">Add your USDT BEP20 wallet address before withdrawal.</small>
+            <strong id="withdrawWalletText" class="withdraw-visually-hidden" data-i18n="withdraw.noBep20WalletSaved">No BEP20 wallet saved</strong>
+          </div>
+
+          <div class="withdraw-input-block">
+            <label for="withdrawAmount" data-i18n="withdraw.amount">Amount</label>
+            <div class="withdraw-amount-row">
+              <div class="withdraw-wallet-input-wrap">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input id="withdrawAmount" type="number" min="1" step="0.01" placeholder="Minimum 1 USDT" data-i18n-placeholder="withdraw.minimumPlaceholder" inputmode="decimal">
+              </div>
+              <button class="withdraw-max-button" id="withdrawMaxButton" type="button" data-i18n="withdraw.max">MAX</button>
+            </div>
+          </div>
+
+          <div class="withdraw-fee-box">
+            <div><span data-i18n="withdraw.minimumWithdrawal">Minimum Withdrawal</span><strong>1.00 USDT</strong></div>
+            <div><span data-i18n="withdraw.withdrawalFee">Withdrawal Fee</span><strong data-preview-fee-rate>10%</strong></div>
+            <div><span data-i18n="withdraw.feeAmount">Fee Amount</span><strong data-preview-fee>0.00 USDT</strong></div>
+            <div><span data-i18n="withdraw.youReceive">You Receive</span><strong data-preview-net>0.00 USDT</strong></div>
+          </div>
+
+
+          <div class="withdraw-alert" id="withdrawFeeNote" data-i18n-html="withdraw.feeNoteStandard"><i class="fa-solid fa-circle-info"></i> A 10% fee applies to standard withdrawals. Eligible one-time profit withdrawal after volume completion is processed without a fee.</div>
+
+          <button class="btn full withdraw-submit" type="submit"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="withdraw.submit">Submit Withdrawal</span></button>
+          <p class="status-message" id="withdrawStatus" aria-live="polite"></p>
+          <p class="withdraw-warning-line"><i class="fa-solid fa-triangle-exclamation"></i> <span data-i18n="withdraw.warning">Make sure the wallet address is on BEP20. Wrong network withdrawals cannot be reversed.</span></p>
+        </form>
+      </div>
+
+      <aside class="withdraw-ref-side">
+        <div class="withdraw-ref-card withdraw-terms-card">
+          <span class="withdraw-eyebrow"><i class="fa-solid fa-list-check"></i> <span data-i18n="withdraw.termsEyebrow">Withdrawal Terms</span></span>
+          <h2 data-i18n="withdraw.conditionsTitle">Important Conditions</h2>
+          <ul>
+            <li><i class="fa-solid fa-check-circle"></i><span data-i18n-html="withdraw.term.minimum">Minimum withdrawal amount is <strong>1 USDT</strong>.</span></li>
+            <li><i class="fa-solid fa-check-circle"></i><span data-i18n="withdraw.term.onceDaily">Withdrawals are available once per Lebanon trading day only.</span></li>
+            <li><i class="fa-solid fa-check-circle"></i><span data-i18n-html="withdraw.term.verifiedWallet">Only verified <strong>USDT BEP20</strong> wallet addresses are supported.</span></li>
+            <li><i class="fa-solid fa-check-circle"></i><span data-i18n-html="withdraw.term.standardFee">Standard withdrawal fee is <strong>10%</strong>.</span></li>
+            <li><i class="fa-solid fa-check-circle"></i><span data-i18n="withdraw.term.progress">Keep filling your progress bar to unlock one zero-fee profit withdrawal. Capital deposits stay locked.</span></li>
+            <li><i class="fa-solid fa-check-circle"></i><span data-i18n-html="withdraw.term.zeroFee">After volume completion, one eligible profit withdrawal can be processed with <strong>0% fee</strong>.</span></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="walletModal" aria-hidden="true">
+    <div class="modal-card withdraw-wallet-modal-card" role="dialog" aria-modal="true" aria-labelledby="walletModalTitle">
+      <div class="modal-head">
+        <div>
+          <span class="pill"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="withdraw.modal.pill">BEP20 wallet verification</span></span>
+          <h2 class="small-title" id="walletModalTitle" style="margin-top:14px;" data-i18n="withdraw.modal.title">Save Withdrawal Wallet</h2>
+        </div>
+        <button class="mine-close" type="button" data-wallet-modal-close aria-label="Close wallet form" data-i18n-aria-label="withdraw.modal.close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label data-i18n="withdraw.modal.addressLabel">USDT BEP20 Address</label>
+          <div class="input-wrap"><i class="fa-solid fa-wallet"></i><input id="walletAddressInput" type="text" placeholder="0x..." data-i18n-placeholder="withdraw.modal.addressPlaceholder" autocomplete="off" spellcheck="false"></div>
+          <span class="hint" data-i18n="withdraw.modal.hint">Address must start with 0x and contain 42 characters.</span>
+        </div>
+        <div class="wallet-validation" id="walletValidation"><i class="fa-solid fa-circle-info"></i><span data-i18n="withdraw.validation.enter">Enter the wallet address to verify the BEP20 format.</span></div>
+        <button class="btn full" type="button" id="saveWalletAddress"><i class="fa-solid fa-floppy-disk"></i> <span data-i18n="withdraw.modal.saveWallet">Save Wallet</span></button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span data-i18n="nav.about">About</span></a>
+    <a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span data-i18n="nav.team">Team</span></a>
+    <a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span data-i18n="nav.copy">Copy</span></a>
+    <a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span data-i18n="nav.mine">Mine</span></a>
+  </nav>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

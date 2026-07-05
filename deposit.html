@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deposit | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="mine" data-title-key="meta.depositTitle">
+  <main class="page-shell">
+    <header class="topbar deposit-topbar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark"><img src="assets/images/copy-trader-mark.png" alt="Copy Trader logo" class="brand-logo-img"></span><span><span class="brand-title">Copy Trader</span><span class="brand-subtitle" data-i18n="deposit.brandSubtitle">Deposit center</span></span></a>
+      <button class="refresh-page-btn" type="button" aria-label="Refresh deposit page" title="Refresh deposit page" data-i18n-aria-label="actions.refreshDeposit" data-i18n-title="actions.refreshDeposit" onclick="window.location.reload();">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </button>
+    </header>
+
+    <section class="grid-2 deposit-merged-section">
+      <div class="card card-pad deposit-combined-card">
+        <div class="deposit-protected-badge" aria-label="Protected" data-i18n-aria-label="deposit.protectedBadge">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span data-i18n="deposit.protectedBadge">Protected</span>
+        </div>
+        <h1 class="section-title" data-i18n="deposit.title">Start copying top traders today.</h1>
+        <p class="section-subtitle" data-i18n="deposit.subtitle">Add funds instantly, choose your network, and unlock copy trading with a minimum deposit of only 10 USDT.</p>
+
+        <label class="deposit-network-select-label" for="depositNetworkSelect" data-i18n="deposit.selectNetwork">Select network</label>
+        <div class="deposit-network-select-wrap">
+          <i class="fa-solid fa-network-wired"></i>
+          <select id="depositNetworkSelect" class="deposit-network-select" data-deposit-network-select>
+            <option value="bep20" selected>USDT BEP20</option>
+            <option value="trc20">USDT TRC20</option>
+          </select>
+        </div>
+
+        <div class="deposit-qr-area">
+          <h2 class="small-title" data-i18n="deposit.qrTitle">Deposit QR</h2>
+          <div id="depositQr" aria-label="Deposit QR code"></div>
+          <p class="section-subtitle" id="depositQrNote" data-i18n="deposit.qrNoteBep20">Scan the QR code or copy the BEP20 wallet address below to complete your fast deposit.</p>
+        </div>
+
+        <div class="wallet-address-area">
+          <span class="wallet-address-label" data-i18n="deposit.walletAddress">Wallet address</span>
+          <div class="copy-field">
+            <div class="input-wrap"><i class="fa-solid fa-wallet"></i><input id="walletAddress" data-wallet-input readonly></div>
+            <button class="btn" data-copy-target="#walletAddress"><i class="fa-solid fa-copy"></i> <span data-i18n="deposit.copyAddress">Copy address</span></button>
+          </div>
+
+        <form class="form-grid deposit-request-form" id="depositRequestForm" style="margin-top:18px;">
+          <h2 class="small-title">Submit deposit request</h2>
+          <p class="section-subtitle">Minimum deposit is 10 USDT. After admin confirmation, the amount is posted to the ledger as capital.</p>
+          <div class="field">
+            <label for="depositRequestNetwork">Network</label>
+            <div class="input-wrap"><i class="fa-solid fa-network-wired"></i><select id="depositRequestNetwork"><option value="BEP20">USDT BEP20</option><option value="TRC20">USDT TRC20</option></select></div>
+          </div>
+          <div class="field">
+            <label for="depositAmount">Amount USDT</label>
+            <div class="input-wrap"><i class="fa-solid fa-dollar-sign"></i><input id="depositAmount" type="number" min="10" step="0.01" placeholder="10.00" inputmode="decimal"></div>
+          </div>
+          <div class="field">
+            <label for="depositTxHash">Transaction hash / note</label>
+            <div class="input-wrap"><i class="fa-solid fa-hashtag"></i><input id="depositTxHash" type="text" placeholder="Optional tx hash"></div>
+          </div>
+          <button class="btn full" type="submit"><i class="fa-solid fa-paper-plane"></i> Send deposit request</button>
+          <p class="status-message" id="depositStatus" aria-live="polite"></p>
+        </form>
+        </div>
+      </div>
+    </section>
+    <section class="card card-pad deposit-page-notice" aria-label="Deposit instructions" data-i18n-aria-label="deposit.instructionsAria">
+      <ul class="notice-list">
+        <li><i class="fa-solid fa-circle-check"></i><span data-i18n="deposit.notice.networks">Supported networks: USDT BEP20 and USDT TRC20.</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span data-i18n="deposit.notice.minimum">Minimum deposit: 10 USDT.</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span data-i18n="deposit.notice.arrival">Deposits usually arrive in less than one minute after network confirmation.</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span data-i18n="deposit.notice.fixedAddress">Each network has a fixed wallet address for this account.</span></li>
+        <li><i class="fa-solid fa-triangle-exclamation"></i><span data-i18n="deposit.notice.warning">Do not send assets through a network that does not match the selected address.</span></li>
+      </ul>
+    </section>
+  </main>
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-link" data-nav="about" href="about.html"><i class="fa-solid fa-circle-info"></i><span data-i18n="nav.about">About</span></a>
+    <a class="nav-link" data-nav="team" href="team.html"><i class="fa-solid fa-people-group"></i><span data-i18n="nav.team">Team</span></a>
+    <a class="nav-link" data-nav="copy" href="copy.html"><i class="fa-solid fa-copy"></i><span data-i18n="nav.copy">Copy</span></a>
+    <a class="nav-link" data-nav="dashboard" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a class="nav-link" data-nav="mine" href="#mine-menu" role="button"><i class="fa-solid fa-user-gear"></i><span data-i18n="nav.mine">Mine</span></a>
+  </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

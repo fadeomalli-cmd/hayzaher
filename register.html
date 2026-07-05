@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Account | Copy Trader</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="auth-body has-public-header" data-page="register" data-title-key="meta.registerTitle">
+  <header class="home-public-topbar home-pro-topbar public-site-header auth-public-header auth-no-action-header">
+    <a class="brand home-public-brand" href="home.html" aria-label="Copy Trader home" data-i18n-aria-label="publicHeader.brandAria">
+      <span class="brand-mark"><img src="assets/images/copy-trader-mark.png" alt="Copy Trader logo" class="brand-logo-img"></span>
+      <span><span class="brand-title">Copy Trader</span><span class="brand-subtitle" data-i18n="publicHeader.brandSubtitle">Smart Copy Trading</span></span>
+    </a>
+
+    <nav class="home-public-nav home-anchor-nav" aria-label="Home page sections" data-i18n-aria-label="publicHeader.navAria">
+      <a href="home.html#home-how" data-i18n="publicHeader.nav.how">How it works</a>
+      <a href="home.html#home-withdraw" data-i18n="publicHeader.nav.withdraw">Withdraw</a>
+      <a href="home.html#home-partners" data-i18n="publicHeader.nav.partners">Partners</a>
+    </nav>
+  </header>
+  <main class="auth-wrap auth-single">
+
+    <section class="card auth-panel">
+            <div class="auth-language-switcher" data-auth-language-switcher>
+        <button class="auth-language-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-language-toggle>
+          <i class="fa-solid fa-language"></i>
+          <span class="auth-language-current" data-language-current>EN</span>
+          <i class="fa-solid fa-chevron-down auth-language-caret"></i>
+        </button>
+        <div class="auth-language-menu" hidden data-language-menu>
+          <button class="auth-language-option" type="button" data-set-language="en">English</button>
+          <button class="auth-language-option" type="button" data-set-language="ar">العربية</button>
+          <button class="auth-language-option" type="button" data-set-language="fr">Français</button>
+          <button class="auth-language-option" type="button" data-set-language="de">Deutsch</button>
+          <button class="auth-language-option" type="button" data-set-language="zh">中文</button>
+        </div>
+      </div>
+      <span class="pill" data-i18n-html="register.newAccount"><i class="fa-solid fa-user-plus"></i> New account</span>
+      <h2 class="small-title" style="margin-top:18px;" data-i18n="register.formTitle">Register</h2>
+      <p class="section-subtitle" data-i18n="register.formSubtitle">Select one registration method and complete the required fields.</p>
+
+      <div class="tabs" data-tabs="register-method">
+        <button class="tab-btn active" type="button" data-tab="phone" data-i18n-html="register.tab.phone"><i class="fa-solid fa-mobile-screen"></i> Phone</button>
+        <button class="tab-btn" type="button" data-tab="email" data-i18n-html="register.tab.email"><i class="fa-solid fa-envelope"></i> Email</button>
+      </div>
+
+      <form class="form-panel active" data-tab-panel-group="register-method" data-tab-panel="phone" data-register-form="phone">
+        <div class="form-grid">
+          <div class="field"><label data-i18n="register.phoneNumber">Phone number</label><div class="input-wrap"><i class="fa-solid fa-phone"></i><input name="contact" type="tel" placeholder="Phone number" data-i18n-placeholder="register.placeholder.phone" autocomplete="tel" data-phone-input required></div><span class="hint" data-i18n="register.hint.phone">No phone verification is required in this demo.</span></div>
+          <div class="field"><label data-i18n="register.password">Password</label><div class="input-wrap"><i class="fa-solid fa-lock"></i><input name="password" type="password" minlength="8" placeholder="At least 8 characters" data-i18n-placeholder="register.placeholder.password" autocomplete="new-password" required></div><span class="hint" data-i18n="register.hint.password">Password must contain at least 8 characters, including numbers, letters, or symbols.</span></div>
+          <div class="field"><label data-i18n="register.confirmPassword">Confirm password</label><div class="input-wrap"><i class="fa-solid fa-lock-open"></i><input name="confirm" type="password" minlength="8" placeholder="Confirm password" data-i18n-placeholder="register.placeholder.confirm" autocomplete="new-password" required></div></div>
+          <div class="field"><label data-i18n="register.invitationCode">Invitation code</label><div class="input-wrap"><i class="fa-solid fa-ticket"></i><input name="inviteCode" type="text" placeholder="Enter invitation code" data-i18n-placeholder="register.placeholder.invite"></div><span class="hint" data-i18n="register.hint.invite">Invitation code is required before creating the account.</span></div>
+          <label class="agreement"><input type="checkbox" required> <span data-i18n-html="register.agreementHtml">I agree to the <a class="agreement-link" href="user-agreement.html" target="_blank" rel="noopener">User Agreement and Terms of Use</a>.</span></label>
+          <button class="btn full" type="submit" data-i18n-html="register.button.submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Register</button>
+          <p class="status-message" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <form class="form-panel" data-tab-panel-group="register-method" data-tab-panel="email" data-register-form="email">
+        <div class="form-grid">
+          <div class="field"><label data-i18n="register.emailAddress">Email address</label><div class="input-wrap"><i class="fa-solid fa-envelope"></i><input name="contact" type="text" placeholder="Enter email address" data-i18n-placeholder="register.placeholder.email" autocomplete="email"></div><span class="hint" data-i18n="register.hint.email">No email verification is required in this demo.</span></div>
+          <div class="field"><label data-i18n="register.password">Password</label><div class="input-wrap"><i class="fa-solid fa-lock"></i><input name="password" type="password" minlength="8" placeholder="At least 8 characters" data-i18n-placeholder="register.placeholder.password" autocomplete="new-password" required></div><span class="hint" data-i18n="register.hint.password">Password must contain at least 8 characters, including numbers, letters, or symbols.</span></div>
+          <div class="field"><label data-i18n="register.confirmPassword">Confirm password</label><div class="input-wrap"><i class="fa-solid fa-lock-open"></i><input name="confirm" type="password" minlength="8" placeholder="Confirm password" data-i18n-placeholder="register.placeholder.confirm" autocomplete="new-password" required></div></div>
+          <div class="field"><label data-i18n="register.invitationCode">Invitation code</label><div class="input-wrap"><i class="fa-solid fa-ticket"></i><input name="inviteCode" type="text" placeholder="Enter invitation code" data-i18n-placeholder="register.placeholder.invite"></div><span class="hint" data-i18n="register.hint.invite">Invitation code is required before creating the account.</span></div>
+          <label class="agreement"><input type="checkbox" required> <span data-i18n-html="register.agreementHtml">I agree to the <a class="agreement-link" href="user-agreement.html" target="_blank" rel="noopener">User Agreement and Terms of Use</a>.</span></label>
+          <button class="btn full" type="submit" data-i18n-html="register.button.submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Register</button>
+          <p class="status-message" aria-live="polite"></p>
+        </div>
+      </form>
+      <div class="auth-actions"><span class="muted" data-i18n="register.alreadyRegistered">Already registered?</span><a class="btn ghost" href="login.html" data-i18n="register.login">Login</a></div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+  <script src="assets/js/translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/backend-config.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    (function () {
+      const switcher = document.querySelector('[data-auth-language-switcher]');
+      if (!switcher || !window.CopyTraderI18n) return;
+
+      const toggle = switcher.querySelector('[data-language-toggle]');
+      const menu = switcher.querySelector('[data-language-menu]');
+      const current = switcher.querySelector('[data-language-current]');
+      const options = Array.from(switcher.querySelectorAll('[data-set-language]'));
+      const labels = {
+        en: 'EN',
+        ar: 'AR',
+        fr: 'FR',
+        de: 'DE',
+        zh: '中文'
+      };
+
+      function renderLanguageState() {
+        const lang = window.CopyTraderI18n.getLanguage();
+        if (current) current.textContent = labels[lang] || 'EN';
+        options.forEach(option => {
+          const isActive = option.dataset.setLanguage === lang;
+          option.classList.toggle('active', isActive);
+          option.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      }
+
+      function closeMenu() {
+        menu.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+        switcher.classList.remove('open');
+      }
+
+      function openMenu() {
+        menu.hidden = false;
+        toggle.setAttribute('aria-expanded', 'true');
+        switcher.classList.add('open');
+      }
+
+      toggle.addEventListener('click', event => {
+        event.stopPropagation();
+        if (menu.hidden) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      });
+
+      options.forEach(option => {
+        option.addEventListener('click', () => {
+          window.CopyTraderI18n.setLanguage(option.dataset.setLanguage);
+          renderLanguageState();
+          closeMenu();
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (!switcher.contains(event.target)) closeMenu();
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('copytrader:languagechange', renderLanguageState);
+      renderLanguageState();
+    })();
+  </script>
+</body>
+</html>
